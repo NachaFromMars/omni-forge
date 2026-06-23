@@ -1,0 +1,54 @@
+{
+  "name": "omni-forge-novel",
+  "version": "1.2.1",
+  "description": "Omni Forge Novel V1.2A — Hệ thống rèn AI viết tiểu thuyết với 3-Agent Sequential Competition + Mix",
+  "author": "Mr Nấng / Nacharium / Tiểu Tâm / La MulaPC1",
+  "license": "MIT",
+  "keywords": [
+    "novel",
+    "fiction",
+    "creative-writing",
+    "forge",
+    "tiểu thuyết",
+    "vietnamese",
+    "ai-writing",
+    "sequential-competition",
+    "micro-council",
+    "nacharium",
+    "OIF"
+  ],
+  "triggers": [
+    "viết tiểu thuyết",
+    "novel",
+    "truyện dài",
+    "forge",
+    "OIF",
+    "creative writing",
+    "FORGE+C",
+    "Nacharium",
+    "viết văn AI",
+    "prose",
+    "fiction",
+    "literary"
+  ],
+  "compatibility": {
+    "claude": "all",
+    "gpt": "4+",
+    "gemini": "pro+",
+    "qwen": "all",
+    "mistral": "all",
+    "openclaw": "0.1.0+"
+  },
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "references/nacharium.md",
+    "references/prompts.md",
+    "references/techniques.md",
+    "references/diagnostics.md",
+    "references/forge-workflow.md",
+    "references/literary-lib.md",
+    "references/checklist.md",
+    "references/oif-loop.md"
+  ]
+}
