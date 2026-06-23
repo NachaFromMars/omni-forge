@@ -1,94 +1,61 @@
-# Omni Forge Novel V1.2A
+# Omni Forge Novel
 
-**Hệ thống rèn AI viết tiểu thuyết — Sequential Competition + Mix Edition**
+> Multi-agent AI novel writing system with Sequential Competition, Mix Edition, and council-based quality gates.
 
-> "Token rẻ hơn tác phẩm tệ. Luôn chọn chất lượng."
+[![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill-blueviolet)](https://github.com/NachaFromMars)
+[![Version](https://img.shields.io/badge/Version-1.2A-orange)](/)
 
-## Tổng Quan
+## Overview
 
-Omni Forge Novel là hệ thống hoàn chỉnh để rèn AI viết tiểu thuyết — từ ý tưởng thô đến bản thảo sẵn sàng xuất bản.
+**Omni Forge Novel** is an orchestration skill for AI-assisted novel writing. It runs multiple AI agents against the same scene or chapter beat, evaluates outputs through a council scoring system, and selects (or mixes) the best result — producing consistently higher-quality prose than single-pass generation.
 
-### V1.2A — Nâng cấp lõi:
-- **3 agents viết TUẦN TỰ** — agent sau đọc bản trước tham khảo nhưng hoàn toàn tự do
-- **Micro-council = EDITOR + JUDGE** — chọn bản khung + MIX highlights từ tất cả bản
-- **Chất lượng = MIX(BEST_OF_3)** — không lãng phí bất kỳ câu hay nào
+## Core Concepts
 
-### Tính năng:
-- FORGE+C 2.0 (8 bước sản xuất)
-- OIF Infinity Loop (6 phases)
-- Hội đồng Nacharium (5 vai nhanh / 13 personas đầy đủ)
-- 3-Agent Sequential Competition Micro-Beat (400-600 từ/beat)
-- 12 kỹ thuật cấp cao
-- 738 kỹ thuật văn học
-- 96 yếu tố văn học
-- 8 prompt templates (bao gồm Agent 2, Agent 3, EDITOR prompts)
-- Chẩn đoán 16 bệnh văn chương
-- 14 lệnh tắt + 5 lệnh OIF
-- Fault tolerance + Self-absorption evolution
+### Sequential Competition
+Multiple AI agents each write the same passage independently. Outputs are scored across dimensions (prose quality, pacing, consistency, originality) and the winner advances to the next stage.
 
-## Cài Đặt
+### Mix Edition
+Instead of picking a single winner, the system extracts the strongest elements from each candidate and merges them into a hybrid output — combining narrative momentum from one draft with character voice from another.
 
-### Cách 1: ClawHub (khuyến nghị)
-```bash
-clawhub install omni-forge-novel
-```
+### Council Evaluation
+A dedicated evaluation agent (or panel) scores each candidate on a 0–10 rubric. Only outputs scoring ≥ 7 pass the gate and move forward.
 
-### Cách 2: Thủ công
-1. Copy thư mục `omni-forge-novel-v1.2a/` vào `skills/omni-forge/` trong workspace
-2. Hoặc paste nội dung `SKILL.md` vào đầu phiên chat với bất kỳ AI nào
+## When to Use
 
-### Cách 3: Dùng trực tiếp
-Paste toàn bộ nội dung `SKILL.md` vào system prompt hoặc đầu conversation.
+- Writing chapters or scenes with high creative stakes (climax, twist, opening, ending)
+- Breaking out of repetitive AI prose patterns
+- Generating multiple stylistic variants before committing to a direction
+- Long-form novel projects requiring consistent quality across 50–100+ chapters
 
-## Tương Thích
+## Files
 
-Áp dụng cho mọi LLM:
-- Claude (Opus, Sonnet, Haiku)
-- GPT-4, GPT-4o
-- Gemini Pro, Ultra
-- Qwen
-- Mistral
-- Và mọi LLM khác
+| File | Purpose |
+|---|---|
+| `SKILL.md` | OpenClaw skill entrypoint |
+| `forge-workflow.md` | Full pipeline workflow documentation |
+| `checklist.md` | Pre/post-forge quality checklist |
+| `diagnostics.md` | Debugging stuck agents, stalled outputs |
 
-## Quick Start
-
-### Bước 1: Chuẩn bị Voice Kit
-300-500 từ prose mẫu + tag giải thích. Paste đầu phiên.
-
-### Bước 2: Frame chương
-Skeleton Key + 3 PHẢI/3 CẤM + micro-outline 5 beats
-
-### Bước 3: Chạy FORGE+C 2.0 + Sequential 3-Agent + MIX
-```
-F → O → R(×3 tuần tự + micro-council EDITOR MIX) → G → E → C → +C
-```
-
-## Token Budget
-
-| | V1.0 | V1.1A | V1.2A |
-|---|---|---|---|
-| Tổng calls | ~9 | ~26 | ~26 |
-| Token | ~3-5M | ~8-12M | ~12-16M |
-| Thời gian | ~15 phút | ~40 phút | ~60 phút |
-| Chất lượng | Tốt | MAX(3) | **MIX(BEST_OF_3)** |
-
-## Evolution
+## Workflow at a Glance
 
 ```
-V1.0 (1-agent) → V1.1 (3-agent song song) → V1.1A (bỏ label, tách bước)
-→ V1.2 (tuần tự + MIX) → V1.2A (tự do + EDITOR mode)
+Beat prompt → N agents write independently
+     ↓
+Council scores each output (0–10)
+     ↓
+Score ≥ 7?  ──Yes──► Select best / Mix edition
+            ──No───► Retry with adjusted prompt
+     ↓
+Final output → Novel Guardian scan → FINAL
 ```
 
-## Credits
+## Related Skills
 
-- **Mr Nấng / Nacharium** — Tác giả hệ thống
-- **Tiểu Tâm** — AI assistant, đúc V1.0
-- **La MulaPC1** — AI assistant, đúc V1.1A, V1.2A
-
-## License
-
-MIT License — Sử dụng tự do, ghi credit nếu chia sẻ.
+- [novel-guardian](https://github.com/NachaFromMars/novel-guardian) — Continuity + consistency checker
+- [novel-master](https://github.com/NachaFromMars/novel-master) — 5-layer chapter QA system
+- [novelcore-ai](https://github.com/NachaFromMars/novelcore-ai) — Structured beat prompting (4-block, 3-variant)
+- [forge-novel-guard](https://github.com/NachaFromMars/forge-novel-guard) — Pre/post-forge verification scripts
 
 ---
 
-*"Token rẻ hơn tác phẩm tệ. Luôn chọn chất lượng."*
+Part of the [NachaFromMars](https://github.com/NachaFromMars) OpenClaw skill ecosystem.
